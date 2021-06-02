@@ -22,9 +22,9 @@ public class RedirectServlet extends HttpServlet {
             requestDispatcher.forward(request, response);
         }
         else if("redirect".equalsIgnoreCase(type)) {
-            //String path = request.getContextPath() + "/redirectPage.html";
+            String path = request.getContextPath() + "/redirectPage.html";
             //String path = request.getContextPath() + "/notfound";
-            String path = "https://teachmeskills.by";
+            //String path = "https://teachmeskills.by";
             response.sendRedirect(path);
         }
         else {
