@@ -1,6 +1,9 @@
 package by.teachmeskills.JavaEE.controller.basic;
 
 import by.teachmeskills.JavaEE.model.Person;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.Arrays;
@@ -20,8 +23,14 @@ public class HelloServlet extends HttpServlet {
         message = "Hello World!";
     }
 
+    private static final Logger LOGGER = LogManager.getLogger(HelloServlet.class);
+    private static final Logger ROOT_LOGGER = LogManager.getRootLogger();
+
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
+
+        LOGGER.log(Level.WARN, "warn-error");
+        ROOT_LOGGER.log(Level.FATAL, "root_error");
 
         // Hello
         PrintWriter out = response.getWriter();
