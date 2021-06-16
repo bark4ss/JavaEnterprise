@@ -7,6 +7,7 @@ import by.teachmeskills.JavaEE.util.HibernateSessionFactoryUtil;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Order;
 import org.hibernate.query.Query;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -59,6 +60,7 @@ public class UserDaoImpl implements UserDao {
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<User> cr = cb.createQuery(User.class);
         Root<User> root = cr.from(User.class);
+        cr.orderBy(cb.asc(root.get("age")));
         cr.select(root);
 
         Query<User> query = session.createQuery(cr);
