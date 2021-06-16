@@ -29,7 +29,7 @@ public class CalculatorTest {
     void testCalcTwo()
     {
         System.out.println("======TEST TWO EXECUTED=======");
-        Assertions.assertEquals( 6 , Calculator.add(2, 4));
+        Assertions.assertEquals( 6 , Calculator.add(2, 3));
     }
 
     @AfterEach
