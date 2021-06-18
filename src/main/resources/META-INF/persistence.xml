@@ -8,11 +8,12 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
-            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
             <property name="hibernate.connection.username" value="root" />
             <property name="hibernate.connection.password" value="password" />
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/shop?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC" />
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/test_db?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC" />
         </properties>
     </persistence-unit>
+
 </persistence>

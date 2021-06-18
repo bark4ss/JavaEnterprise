@@ -23,6 +23,7 @@ public class JPAUserDaoImpl implements UserDao {
         EntityManager em = EntityManagerFactoryUtil.getEntityManagerFactory().createEntityManager();
         em.getTransaction().begin();
         em.persist(user);
+        System.out.println(user.getId());
         em.getTransaction().commit();
         em.close();
     }
@@ -56,7 +57,7 @@ public class JPAUserDaoImpl implements UserDao {
     @Override
     public List<User> findAll() {
         EntityManager em = EntityManagerFactoryUtil.getEntityManagerFactory().createEntityManager();
-        List<User> users = (List<User>)em.createQuery("FROM User").getResultList();
+        List<User> users = (List<User>)em.createNamedQuery("User.findAll").getResultList();
         em.close();
         return users;
     }

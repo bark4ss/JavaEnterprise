@@ -6,7 +6,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class User {
+@NamedQuery(name = "User.findAll", query = "select u from User as u")
+public class User extends Human {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
