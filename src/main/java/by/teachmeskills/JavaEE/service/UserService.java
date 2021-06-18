@@ -3,12 +3,13 @@ package by.teachmeskills.JavaEE.service;
 import by.teachmeskills.JavaEE.model.Auto;
 import by.teachmeskills.JavaEE.model.User;
 import by.teachmeskills.JavaEE.repository.UserDao;
-import by.teachmeskills.JavaEE.repository.impl.UserDaoImpl;
+import by.teachmeskills.JavaEE.repository.impl.HibernateUserDaoImpl;
+import by.teachmeskills.JavaEE.repository.impl.JPAUserDaoImpl;
 
 import java.util.List;
 
 public class UserService {
-    private UserDao usersDao = new UserDaoImpl();
+    private UserDao usersDao = new JPAUserDaoImpl();//HibernateUserDaoImpl
 
     public UserService() {
     }

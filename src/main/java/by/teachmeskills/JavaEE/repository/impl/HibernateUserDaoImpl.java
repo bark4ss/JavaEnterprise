@@ -15,7 +15,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
-public class UserDaoImpl implements UserDao {
+public class HibernateUserDaoImpl implements UserDao {
 
     @Override
     public User findById(int id) {
