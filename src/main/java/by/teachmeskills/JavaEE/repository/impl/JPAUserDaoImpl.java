@@ -3,12 +3,13 @@ package by.teachmeskills.JavaEE.repository.impl;
 import by.teachmeskills.JavaEE.model.Auto;
 import by.teachmeskills.JavaEE.model.User;
 import by.teachmeskills.JavaEE.repository.UserDao;
-import by.teachmeskills.JavaEE.util.EntityManagerFactoryUtil;
-import by.teachmeskills.JavaEE.util.HibernateSessionFactoryUtil;
+import by.teachmeskills.JavaEE.config.EntityManagerFactoryUtil;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import java.util.List;
 
+@Repository("JPA")
 public class JPAUserDaoImpl implements UserDao {
     @Override
     public User findById(int id) {

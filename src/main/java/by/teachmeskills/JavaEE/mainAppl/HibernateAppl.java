@@ -1,8 +1,13 @@
 package by.teachmeskills.JavaEE.mainAppl;
 
+import by.teachmeskills.JavaEE.config.ApplicationConfiguration;
 import by.teachmeskills.JavaEE.model.Auto;
 import by.teachmeskills.JavaEE.model.User;
 import by.teachmeskills.JavaEE.service.UserService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.util.Arrays;
 
 public class HibernateAppl {
     public static void main(String[] args) {

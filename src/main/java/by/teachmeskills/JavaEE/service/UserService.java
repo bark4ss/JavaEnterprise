@@ -5,13 +5,22 @@ import by.teachmeskills.JavaEE.model.User;
 import by.teachmeskills.JavaEE.repository.UserDao;
 import by.teachmeskills.JavaEE.repository.impl.HibernateUserDaoImpl;
 import by.teachmeskills.JavaEE.repository.impl.JPAUserDaoImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class UserService {
-    private UserDao usersDao = new JPAUserDaoImpl();//HibernateUserDaoImpl
+
+    private UserDao usersDao;//HibernateUserDaoImpl
 
     public UserService() {
+
+    }
+    @Autowired
+    public UserService(@Qualifier("JPA") UserDao usersDao) {
+        this.usersDao = usersDao;
     }
 
     public User findUser(int id) {

@@ -1,4 +1,4 @@
-package by.teachmeskills.JavaEE.util;
+package by.teachmeskills.JavaEE.config;
 
 import by.teachmeskills.JavaEE.model.Auto;
 import by.teachmeskills.JavaEE.model.User;

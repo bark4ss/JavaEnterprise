@@ -3,18 +3,17 @@ package by.teachmeskills.JavaEE.repository.impl;
 import by.teachmeskills.JavaEE.model.Auto;
 import by.teachmeskills.JavaEE.model.User;
 import by.teachmeskills.JavaEE.repository.UserDao;
-import by.teachmeskills.JavaEE.util.HibernateSessionFactoryUtil;
-import org.hibernate.Criteria;
+import by.teachmeskills.JavaEE.config.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.Order;
 import org.hibernate.query.Query;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
-
+@Repository("Hibernate")
 public class HibernateUserDaoImpl implements UserDao {
 
     @Override

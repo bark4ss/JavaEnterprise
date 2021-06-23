@@ -1,4 +1,4 @@
-package by.teachmeskills.JavaEE.util;
+package by.teachmeskills.JavaEE.config;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

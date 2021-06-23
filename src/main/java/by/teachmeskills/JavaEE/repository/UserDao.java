@@ -2,9 +2,6 @@ package by.teachmeskills.JavaEE.repository;
 
 import by.teachmeskills.JavaEE.model.Auto;
 import by.teachmeskills.JavaEE.model.User;
-import by.teachmeskills.JavaEE.util.HibernateSessionFactoryUtil;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.util.List;
 
