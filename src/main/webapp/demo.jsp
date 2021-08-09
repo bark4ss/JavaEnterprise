@@ -1,5 +1,5 @@
 <%@ page import="java.util.Date" %>
-<%@ page import="by.teachmeskills.JavaEE.util.djl.ObjectDetection"%>
+<%@ page import="by.teachmeskills.JavaEE.util.djl.ObjectDetection" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String header = "Apache Tomcat";
