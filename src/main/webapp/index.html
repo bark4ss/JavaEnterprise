@@ -2,12 +2,13 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 <header>Hello Header</header>
 <h1>Home page
 </h1>
-<br/>
+<br>
 <ul>
     <li><a href="hello-servlet">Hello Annotation Servlet</a></li>
     <li><a href="web-servlet">Hello WebXML Servlet</a></li>
@@ -15,6 +16,73 @@
     <li><a href="uploadImagePage.html">Upload Image</a></li>
     <li><a href="demo.jsp">Demo page</a></li>
 </ul>
+<img src="res/aircraft.jpg"/>
+
+
+
+<div class="container">
+    <h1>Employee Register Form:</h1>
+    <div class="card">
+        <div class="card-body">
+            <form action="hello-servlet" method="post">
+
+                <div class="form-group row">
+                    <label for="firstName" class="col-sm-2 col-form-label">First
+                        Name</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="firstName" id="firstName"
+                               placeholder="Enter first name">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="lastName" class="col-sm-2 col-form-label">Last
+                        Name</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="lastName" id="lastName"
+                               placeholder="Enter last name">
+                    </div>
+                </div>
+
+                <div class=" form-group row">
+                    <label for="userName" class="col-sm-2 col-form-label">User
+                        Name</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="username" id="userName"
+                               placeholder="Enter user name">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="pass" class="col-sm-2 col-form-label">Passwrod</label>
+                    <div class="col-sm-7">
+                        <input type="password" class="form-control" name="password" id="pass"
+                               placeholder="Enter Password">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="addr" class="col-sm-2 col-form-label">Address</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="address" id="addr"
+                               placeholder="Enter Address">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="contact" class="col-sm-2 col-form-label">Contact
+                        No</label>
+                    <div class="col-sm-7">
+                        <input type="text" class="form-control" name="contact" id="contact"
+                               placeholder="Enter Contact Address">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
 <footer>Hello Footer!!!</footer>
 </body>
 </html>

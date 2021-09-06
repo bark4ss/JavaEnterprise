@@ -23,14 +23,25 @@ public class HelloServlet extends HttpServlet {
         message = "Hello World!";
     }
 
+    //private static final Logger LOGGER = LogManager.getLogger(HelloServlet.class);
     private static final Logger LOGGER = LogManager.getLogger(HelloServlet.class);
     private static final Logger ROOT_LOGGER = LogManager.getRootLogger();
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        LOGGER.log(Level.INFO,"request:");
+        LOGGER.log(Level.TRACE,"trace:");
+        ROOT_LOGGER.log(Level.INFO, "root_error");
         response.setContentType("text/html");
+        try {
+            throw new RuntimeException();
+        } catch (RuntimeException e) {
+            LOGGER.log(Level.ERROR,"catch exception");
+            LOGGER.log(Level.ERROR,e);
+        }
+
 
         LOGGER.log(Level.WARN, "warn-error");
-        ROOT_LOGGER.log(Level.FATAL, "root_error");
+        //ROOT_LOGGER.log(Level.FATAL, "root_error");
 
         // Hello
         PrintWriter out = response.getWriter();
