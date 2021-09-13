@@ -14,6 +14,9 @@ public class HibernateSessionFactoryUtil {
     //http://java-online.ru/hibernate-hql.xhtml
     //http://java-online.ru/hibernate-criteria.xhtml
     //https://www.baeldung.com/hibernate-criteria-queries
+    //https://habr.com/ru/post/337488/
+    //https://www.geeksforgeeks.org/hibernate-lifecycle/
+    //https://habr.com/ru/post/271115/
     private static SessionFactory sessionFactory;
 
     private HibernateSessionFactoryUtil() {}

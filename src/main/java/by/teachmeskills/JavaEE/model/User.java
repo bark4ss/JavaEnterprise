@@ -9,8 +9,10 @@ import java.util.List;
 @NamedQuery(name = "User.findAll", query = "select u from User as u")
 public class User extends Human {
 
+    //https://easyjava.ru/data/hibernate/pervichnye-klyuchi-v-hibernate/
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name = "name")
     private String name;
@@ -18,6 +20,8 @@ public class User extends Human {
     private int age;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    //https://sysout.ru/kak-rabotaet-orphanremoval/
+    //https://coderlessons.com/articles/java/rukovodstvo-dlia-nachinaiushchikh-po-jpa-i-hibernate-cascade-types
     private List<Auto> autos;
 
     public User() {
