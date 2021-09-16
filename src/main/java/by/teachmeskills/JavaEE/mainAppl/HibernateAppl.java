@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class HibernateAppl {
     public static void main(String[] args) {
         UserService userService = new UserService();
-        User user = new User("Dima",36);
+        User user = new User("Oleg",31);
         userService.saveUser(user);
         Auto ferrari = new Auto("Tesla", "white");
         ferrari.setUser(user);

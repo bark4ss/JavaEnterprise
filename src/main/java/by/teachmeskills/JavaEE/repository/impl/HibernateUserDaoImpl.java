@@ -16,6 +16,7 @@ import java.util.List;
 @Repository("Hibernate")
 public class HibernateUserDaoImpl implements UserDao {
 
+    //https://habr.com/ru/post/555920/
     @Override
     public User findById(int id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, id);

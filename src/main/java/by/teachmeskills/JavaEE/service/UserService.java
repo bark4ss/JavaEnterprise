@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class UserService {
 
-    private UserDao usersDao;//HibernateUserDaoImpl
+    private UserDao usersDao = new HibernateUserDaoImpl();//HibernateUserDaoImpl
 
     public UserService() {
 

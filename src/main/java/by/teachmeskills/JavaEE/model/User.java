@@ -7,6 +7,10 @@ import java.util.List;
 @Entity
 @Table(name = "users")
 @NamedQuery(name = "User.findAll", query = "select u from User as u")
+//https://www.baeldung.com/hibernate-named-query
+//https://proselyte.net/tutorials/hibernate-tutorial/hibernate-query-language/
+//http://java-online.ru/hibernate-hql.xhtml
+//https://easyjava.ru/data/hibernate/hibernate-query-language/
 public class User extends Human {
 
     //https://easyjava.ru/data/hibernate/pervichnye-klyuchi-v-hibernate/
