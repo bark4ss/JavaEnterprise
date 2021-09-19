@@ -1,7 +1,6 @@
 package by.teachmeskills.JavaEE.config;
 
-import by.teachmeskills.JavaEE.model.Auto;
-import by.teachmeskills.JavaEE.model.User;
+import by.teachmeskills.JavaEE.model.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -28,6 +27,8 @@ public class HibernateSessionFactoryUtil {
                 Configuration configuration = new Configuration();
                 configuration.addAnnotatedClass(User.class);
                 configuration.addAnnotatedClass(Auto.class);
+                configuration.addAnnotatedClass(Passport.class);
+                configuration.addAnnotatedClass(Project.class);
                 sessionFactory = configuration
                         .buildSessionFactory(new StandardServiceRegistryBuilder()
                                 .build());

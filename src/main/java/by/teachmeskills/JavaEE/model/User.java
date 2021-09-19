@@ -2,7 +2,9 @@ package by.teachmeskills.JavaEE.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -27,6 +29,18 @@ public class User extends Human {
     //https://sysout.ru/kak-rabotaet-orphanremoval/
     //https://coderlessons.com/articles/java/rukovodstvo-dlia-nachinaiushchikh-po-jpa-i-hibernate-cascade-types
     private List<Auto> autos;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="passport_id")
+    private Passport passport;
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "user_project",
+            joinColumns = { @JoinColumn(name = "user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "project_id") }
+    )
+    private Set<Project> projects = new HashSet<>();
 
     public User() {
     }
@@ -74,12 +88,31 @@ public class User extends Human {
         this.autos = autos;
     }
 
+    public Passport getPassport() {
+        return passport;
+    }
+
+    public void setPassport(Passport passport) {
+        this.passport = passport;
+    }
+
+    public Set<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Set<Project> projects) {
+        this.projects = projects;
+    }
+
     @Override
     public String toString() {
-        return "models.User{" +
+        return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", autos=" + autos +
+                ", passport=" + passport +
+                ", projects=" + projects +
                 '}';
     }
 }

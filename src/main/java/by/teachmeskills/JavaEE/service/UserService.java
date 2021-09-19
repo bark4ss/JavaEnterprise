@@ -2,9 +2,8 @@ package by.teachmeskills.JavaEE.service;
 
 import by.teachmeskills.JavaEE.model.Auto;
 import by.teachmeskills.JavaEE.model.User;
-import by.teachmeskills.JavaEE.repository.UserDao;
+import by.teachmeskills.JavaEE.repository.BaseDao;
 import by.teachmeskills.JavaEE.repository.impl.HibernateUserDaoImpl;
-import by.teachmeskills.JavaEE.repository.impl.JPAUserDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -13,13 +12,13 @@ import java.util.List;
 @Service
 public class UserService {
 
-    private UserDao usersDao = new HibernateUserDaoImpl();//HibernateUserDaoImpl
+    private BaseDao<User> usersDao = new HibernateUserDaoImpl();//HibernateUserDaoImpl
 
     public UserService() {
 
     }
     @Autowired
-    public UserService(@Qualifier("JPA") UserDao usersDao) {
+    public UserService(@Qualifier("JPA") BaseDao<User> usersDao) {
         this.usersDao = usersDao;
     }
 
@@ -43,7 +42,4 @@ public class UserService {
         return usersDao.findAll();
     }
 
-    public Auto findAutoById(int id) {
-        return usersDao.findAutoById(id);
-    }
 }

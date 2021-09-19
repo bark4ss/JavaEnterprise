@@ -2,7 +2,7 @@ package by.teachmeskills.JavaEE.repository.impl;
 
 import by.teachmeskills.JavaEE.model.Auto;
 import by.teachmeskills.JavaEE.model.User;
-import by.teachmeskills.JavaEE.repository.UserDao;
+import by.teachmeskills.JavaEE.repository.BaseDao;
 import by.teachmeskills.JavaEE.config.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -14,7 +14,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
 @Repository("Hibernate")
-public class HibernateUserDaoImpl implements UserDao {
+public class HibernateUserDaoImpl implements BaseDao<User> {
 
     //https://habr.com/ru/post/555920/
     @Override
@@ -47,11 +47,6 @@ public class HibernateUserDaoImpl implements UserDao {
         session.delete(user);
         tx1.commit();
         session.close();
-    }
-
-    @Override
-    public Auto findAutoById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Auto.class, id);
     }
 
     @Override
