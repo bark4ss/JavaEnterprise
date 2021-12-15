@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class UserService {
 
-    private BaseDao<User> usersDao = new HibernateUserDaoImpl();//HibernateUserDaoImpl
+    private BaseDao<User> usersDao;//HibernateUserDaoImpl
 
     public UserService() {
 
@@ -40,6 +40,10 @@ public class UserService {
 
     public List<User> findAllUsers() {
         return usersDao.findAll();
+    }
+
+    public void initM() {
+        System.out.println("Service");
     }
 
 }

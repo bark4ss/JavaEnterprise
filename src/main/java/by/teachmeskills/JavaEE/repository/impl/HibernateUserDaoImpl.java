@@ -51,12 +51,14 @@ public class HibernateUserDaoImpl implements BaseDao<User> {
 
     @Override
     public List<User> findAll() {
+        //https://www.baeldung.com/hibernate-criteria-queries
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<User> cr = cb.createQuery(User.class);
         Root<User> root = cr.from(User.class);
         cr.orderBy(cb.asc(root.get("age")));
         cr.select(root);
+        //cr.select(root).where(cb.like(root.get("age"),"%Ol%"));
 
         Query<User> query = session.createQuery(cr);
         return query.getResultList();

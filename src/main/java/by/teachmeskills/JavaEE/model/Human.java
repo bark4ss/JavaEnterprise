@@ -20,4 +20,13 @@ public class Human {
     public void setLogin(String login) {
         this.login = login;
     }
+
+    public void initMethod() {
+        System.out.println("login: "+ this.login);
+        System.out.println("InitMethod");
+    }
+
+    public void destroyMethod() {
+        System.out.println("DestroyMethod");
+    }
 }

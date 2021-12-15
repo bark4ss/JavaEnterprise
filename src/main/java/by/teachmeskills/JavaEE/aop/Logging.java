@@ -9,6 +9,7 @@ import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
+
 @Aspect
 @Component
 public class Logging {
@@ -17,7 +18,7 @@ public class Logging {
     //https://habr.com/ru/post/428548/
     private final Logger LOGGER = LogManager.getLogger(this.getClass());
 
-    @Pointcut("execution(public * by.teachmeskills.JavaEE.service.UserService.*(..))")
+    @Pointcut("execution(public * by.teachmeskills.JavaEE.service.*.*(..))")
     public void selectAllMethodsAvailable() {
 
     }

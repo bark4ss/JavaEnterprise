@@ -7,11 +7,15 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class CalculatorTest {
 
+    private Calculator calculator;
+
     @BeforeAll
-    static void setup() {
+    void setup() {
         System.out.println("@BeforeAll executed");
+        calculator = new Calculator();
     }
 
     @BeforeEach
@@ -23,20 +27,19 @@ public class CalculatorTest {
     @Test
     void testCalcOne() {
         System.out.println("======TEST ONE EXECUTED=======");
-        Assertions.assertEquals(4, Calculator.add(2, 2));
+        Assertions.assertEquals(4, calculator.add(2, 2));
     }
 
     @Tag("PROD")
     @Disabled
     @Test
     void testCalcTwo() {
-        System.out.println("======TEST TWO EXECUTED=======");
-        Assertions.assertEquals(6, Calculator.add(2, 3));
+        Assertions.assertEquals(6, calculator.add(2, 3), "======TEST TWO EXECUTED=======");
     }
 
     @ParameterizedTest(name = "{index} => a={0}, b={1}, sum={2}")
     @CsvSource({
-            "1,2,4",
+            "1,2,3",
             "2,3,5",
             "2,2,4"
     }
@@ -44,7 +47,7 @@ public class CalculatorTest {
     )
     void testCalcThree(int a, int b, int sum) {
         System.out.println("======TEST TWO EXECUTED=======");
-        Assertions.assertEquals(sum, Calculator.add(a, b));
+        Assertions.assertEquals(sum, calculator.add(a, b));
     }
 
     @Test

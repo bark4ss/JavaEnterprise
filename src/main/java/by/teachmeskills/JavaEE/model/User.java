@@ -25,16 +25,16 @@ public class User extends Human {
     //можно не указывать Column name, если оно совпадает с названием столбца в таблице
     private int age;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     //https://sysout.ru/kak-rabotaet-orphanremoval/
     //https://coderlessons.com/articles/java/rukovodstvo-dlia-nachinaiushchikh-po-jpa-i-hibernate-cascade-types
     private List<Auto> autos;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL,  fetch = FetchType.EAGER)
     @JoinColumn(name="passport_id")
     private Passport passport;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
+    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_project",
             joinColumns = { @JoinColumn(name = "user_id") },
