@@ -31,7 +31,7 @@ public class SpringDemoApplication {
         Human human22 = (Human) context.getBean("human2");
 
         System.out.println(human1.getLogin());
-        System.out.println(human11.getLogin());
+        /*System.out.println(human11.getLogin());
         System.out.println(human2.getLogin());
         System.out.println(human22.getLogin());
 
@@ -53,6 +53,6 @@ public class SpringDemoApplication {
         bugatti.setUser(user);
         user.addAuto(bugatti);
         userService.updateUser(user);
-        userService.findAllUsers().forEach(System.out::println);
+        userService.findAllUsers().forEach(System.out::println);*/
     }
 }
